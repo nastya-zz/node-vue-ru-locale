@@ -16,4 +16,3 @@ RUN cp /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 ENV LANG=ru_RU.UTF-8
 ENV LANGUAGE=ru_RU.UTF-8
 ENV LC_ALL ru_RU.UTF-8
-RUN echo locale
