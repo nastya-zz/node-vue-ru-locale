@@ -10,10 +10,10 @@ ENV PATH /app/node_modules/.bin:$PATH
 
 RUN yarn global add @vue/cli@4.5.9
 
-ENV MUSL_LOCPATH=/usr/local/share/i18n/locales/musl
-RUN apk add --update git cmake make musl-dev gcc gettext-dev libintl
-RUN cd /tmp && git clone https://github.com/rilian-la-te/musl-locales.git
-RUN cd /tmp/musl-locales && cmake . && make && make install
-
-ENV LANG=ru_RU.UTF-8 \
-    LANGUAGE=ru_RU.UTF-8
+RUN apk update
+RUN apk add tzdata
+RUN cp /usr/share/zoneinfo/Europe/Moscow /etc/localtime
+ENV LANG=ru_RU.UTF-8
+ENV LANGUAGE=ru_RU.UTF-8
+ENV LC_ALL ru_RU.UTF-8
+RUN echo locale
