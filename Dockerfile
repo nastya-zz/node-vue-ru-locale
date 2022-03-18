@@ -8,7 +8,7 @@ WORKDIR /app
 # add `/app/node_modules/.bin` to $PATH
 ENV PATH /app/node_modules/.bin:$PATH
 
-RUN yarn global add @vue/cli@4.5.9
+RUN yarn global add @vue/cli@4.5.16
 
 RUN apk update
 RUN apk add tzdata
